@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.SMM_TransferenciaCabecera">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <StackLayout Margin="25">
+                <Label FontAttributes="Bold" Text="TRANSFERENCIA" VerticalOptions="Center" HorizontalOptions="Center" FontSize="25"/>
+            </StackLayout>
+            <StackLayout Padding="50,5,50,5">            
+                    <dxe:ComboBoxEdit ItemsSource="{Binding}"
+                  TextFontAttributes="Bold"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="BODEGA ORIGEN"
+                  IsLabelFloating="True"
+                  DisplayMember="NombreBodega"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"
+                  SelectionChanged="cboBodega_SelectionChanged"
+                  x:Name="cboBodega"
+                  ValueMember="idBodega"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True" >
+                        <dxe:ComboBoxEdit.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Label Padding="10" Text="{Binding NombreBodega}" />
+                                </Grid>
+                            </DataTemplate>
+                        </dxe:ComboBoxEdit.ItemTemplate>
+                    </dxe:ComboBoxEdit>              
+            </StackLayout>
+            <StackLayout Padding="50,5,50,5">
+                <dxe:ComboBoxEdit
+                  ItemsSource="{Binding}"
+                  TextFontAttributes="Bold"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="BODEGA DESTINO"
+                  IsLabelFloating="True"
+                  DisplayMember="NombreBodega"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"
+                  SelectionChanged="cboBodegaDestino_SelectionChanged"
+                  x:Name="cboBodegaDestino"
+                  ValueMember="idBodega"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding NombreBodega}" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+            <StackLayout Padding="20,5,20,5">
+                <dxe:ComboBoxEdit
+                  ItemsSource="{Binding}"
+                  TextFontAttributes="Bold"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="ENTIDAD RELACIONADA"
+                  IsLabelFloating="True"
+                  DisplayMember="NomEntidad"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"
+                  SelectionChanged="cboEntidad_SelectionChanged"
+                  x:Name="cboEntidad"
+                  ValueMember="idEntidad"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True" >
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding NomEntidad}" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+            <StackLayout Margin="25,0" >
+                <dxe:TextEdit LabelText="FOLIO ENTIDAD" LabelFontSize="15"  BoxHeight="50" x:Name="txtFolioEntidad" 
+                                    IsLabelFloating="False" BorderColor="Green" LabelColor="Green" >
+                </dxe:TextEdit>
+            </StackLayout>
+            <StackLayout Padding="20,5,20,5">
+                <dxe:ComboBoxEdit
+                  ItemsSource="{Binding}"
+                  TextFontAttributes="Bold"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="FOLIO SOLICITUD"
+                  IsLabelFloating="True"
+                  DisplayMember="folioSoli"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"
+                  SelectionChanged="cboFolioSoli_SelectionChanged"
+                  x:Name="cboFolioSoli"
+                  ValueMember="folioSoli"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True" >
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding folioSoli}" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+            <StackLayout Margin="25,0,25,20" >
+                <dxe:MultilineEdit LabelText="COMENTARIOS" LabelFontSize="15"  BoxHeight="90" x:Name="txtComentarios" 
+                                    IsLabelFloating="False" BorderColor="Green" LabelColor="Green" >
+                </dxe:MultilineEdit>              
+            </StackLayout>
+            <StackLayout Margin="20,20,0,25">
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="Guardar y Crear" CornerRadius="20" FontAttributes="Bold" x:Name="btnCrearOrden" HeightRequest="80" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="DarkBlue"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="Guardar" IconVisible="True"
+                                   Clicked="btnCrearOrden_Clicked" >
+                    </dxe:SimpleButton>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

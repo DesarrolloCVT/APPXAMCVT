@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.TomaInventarioFilm">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Label Text="TOMA INVENTARIO FILM" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black" IsTabStop="True"/>
+            </StackLayout>
+            <StackLayout Margin="25,0">
+                <dxe:ComboBoxEdit 
+                   ItemsSource="{Binding}"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="Folio"
+                  IsLabelFloating="True"
+                  DisplayMember="folioInventario"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"            
+                  ValueMember="folioInventario"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True"  ReturnType="Next"
+                  x:Name="cboFolio"
+                    SelectionChanged="CboFolio_SelectedIndexChanged">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding folioInventario}" FontAttributes="Bold" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+            <!--<StackLayout Padding="55,0,60,0">
+                <Picker x:Name="cboFolio"
+                 Title="Folio"             
+                 TitleColor="Red" SelectedIndexChanged="CboFolio_SelectedIndexChanged">
+                    <Picker.Items>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>-->
+            <!--<StackLayout Margin="25,0">
+                <dxe:ComboBoxEdit 
+                   ItemsSource="{Binding}"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="Tipo Pallet"
+                  IsLabelFloating="True"
+                  DisplayMember="Supportive_Description"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"            
+                  ValueMember="Supportive_Description"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True"  ReturnType="Next"
+                  x:Name="cboTipoPallet"
+                    SelectionChanged="CboTipoPallet_SelectedIndexChanged">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding Supportive_Description}" FontAttributes="Bold" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>-->
+            <StackLayout Margin="25,0">
+                <dxe:TextEdit LabelText="N° Pallet" LabelFontSize="15"  BoxHeight="50" x:Name="txt_pallet" Completed="Txt_pallet_Completed" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"
+                                  Keyboard="Numeric"
+                                 >
+                </dxe:TextEdit>
+                <Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Margin="25,0">
+                <dxe:TextEdit LabelText="Producto" LabelFontSize="15"  BoxHeight="50" x:Name="txt_producto" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"
+                              
+                                 >
+                </dxe:TextEdit>
+                <Label x:Name="lblError2" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Margin="25,0">
+                <dxe:TextEdit LabelText="Lote" LabelFontSize="15"  BoxHeight="50" x:Name="txt_lote" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"
+                                 
+                                 >
+                </dxe:TextEdit>
+                <Label x:Name="lblError3" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Margin="25,0">
+                <dxe:TextEdit LabelText="Cantidad" LabelFontSize="15"  BoxHeight="50" x:Name="txt_cantidad" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Completed="Txt_cantidad_Completed" Keyboard="Numeric">
+                </dxe:TextEdit>
+                <Label x:Name="lblError4" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Margin="25,0">
+                <dxe:TextEdit LabelText="Ubicacion" LabelFontSize="15"  BoxHeight="50" x:Name="txt_ubicacion" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Completed="Txt_ubicacion_Completed" Keyboard="Numeric">
+                </dxe:TextEdit>
+                <Label x:Name="lblError5" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+
+            <StackLayout Margin="25,10,25,50">
+                <dxe:SimpleButton  Text="AGREGAR" CornerRadius="20" FontAttributes="Bold" x:Name="btn_agregar" HeightRequest="70" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="Green"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"                                     
+                                       Clicked="Btn_agregar_Clicked" >
+                </dxe:SimpleButton>
+            </StackLayout>
+            <!--<StackLayout Padding="10">
+                <Button Text="AGREGAR" TextColor="White" x:Name="btn_agregar" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="250" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked="Btn_agregar_Clicked"/>
+            </StackLayout>-->
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

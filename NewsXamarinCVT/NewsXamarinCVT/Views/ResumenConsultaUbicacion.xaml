@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid"
+             mc:Ignorable="d"
+            
+             x:Class="NewsXamarinCVT.Views.ResumenConsultaUbicacion">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <StackLayout Margin="0,10,0,10">
+                    <Label HorizontalTextAlignment="Center" FontSize="Medium" Text="Resumen ubicacion" FontAttributes="Bold"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <dxg:DataGridView x:Name="GvData">
+                        <dxg:DataGridView.ColumnHeaderStyle>
+                            <dxg:ColumnHeaderStyle BackgroundColor="#3399ff" 
+                                   FontSize="12" FontColor="White" FontAttributes="Bold" />
+                        </dxg:DataGridView.ColumnHeaderStyle>
+                        <dxg:DataGridView.CellStyle>
+                            <dxg:CellStyle Padding="5" BackgroundColor="#333333" BorderColor="#515151"
+                           FontSize="14" FontColor="White" 
+                           SelectionColor="#f78a09" SelectionFontColor="Black"/>
+                        </dxg:DataGridView.CellStyle>
+                    </dxg:DataGridView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage> 

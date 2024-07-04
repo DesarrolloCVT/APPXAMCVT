@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             mc:Ignorable="d"
+             x:Class="NewsXamarinCVT.Views.SMMTransferencia">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Label Text="TRANSFERENCIA MAYORISTA" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black" IsTabStop="True"/>
+            </StackLayout>
+            <StackLayout Padding="10">
+                <Button Text="NUEVA TRANSFERENCIA" TextColor="White" x:Name="btn_Nuevo" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="250" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked="btn_Nuevo_Clicked"/>
+            </StackLayout>         
+            <StackLayout x:Name="stReanudar" Margin="0,10,0,0"> 
+                <Grid ColumnSpacing="2" RowSpacing="1"  x:Name="GvGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <dxe:TextEdit LabelText="Folio Transferencia" LabelFontSize="15"  BoxHeight="50" x:Name="txtFolioTransferencia" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text=""
+                                 Margin="5,0,0,0"                             
+                              ClearIconVisibility="Never"                              
+                                      Keyboard="Numeric"
+                                      Grid.Row="0" Grid.Column="0">
+                        </dxe:TextEdit>
+                    </StackLayout>                  
+                    <Button Text="REANUDAR" TextColor="White" x:Name="btn_Reanudar" BackgroundColor="#F80C09"  CornerRadius="5" WidthRequest="100" Padding="2" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" Clicked="btn_Reanudar_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>        
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False" 
+             x:Class="NewsXamarinCVT.Views.SMM_Picking_Consolidado">
+    <ScrollView VerticalOptions="FillAndExpand">        
+        <StackLayout>
+            <StackLayout Padding="0,40,5,0">
+                <Label Text="" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" x:Name="lblPick"/>
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" x:Name="lblPick1"/>
+            </StackLayout>
+            <StackLayout Padding="55,0,60,0">
+                <Entry Placeholder="Codigo" x:Name="txt_pallet" Completed="Txt_pallet_Completed"/>
+                <Label x:Name="lblError1" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="" x:Name="lblProducto" HorizontalTextAlignment="Center"  TextColor="Black" IsTabStop="True" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="" x:Name="lblProducto1" HorizontalTextAlignment="Center"  TextColor="Black" IsTabStop="True" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Padding="55,0,60,0">
+                <Entry Placeholder="Cantidad" x:Name="txt_cantidad" Keyboard="Numeric" Completed="Txt_cantidad_Completed"/>
+                <Label x:Name="lblError2" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Padding="10">
+                <Button Text="AGREGAR" TextColor="White" x:Name="btn_agregar" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="250" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked="Btn_agregar_Clicked" IsEnabled="False"/>
+            </StackLayout>
+
+            <StackLayout Padding="40">
+                <Button Text="TERMINAR PICKING" TextColor="White" x:Name="btn_Terminar" BackgroundColor="Red"  CornerRadius="5" WidthRequest="250" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked="Btn_Terminar_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

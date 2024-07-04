@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewsXamarinCVT.Views.SMMTrazabilidadPallet"
+             xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid"
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="10">
+                    <Label Text="Trazabilidad Pallet SMM" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black"/>
+                </StackLayout>
+                <StackLayout Margin="25,0" Padding="10">              
+                    <dxe:TextEdit LabelText="N° Pallet" LabelFontSize="15"  BoxHeight="50" x:Name="txtNPallet" Completed="txtNPallet_Completed" 
+                                    IsLabelFloating="False" BorderColor="Green" LabelColor="Green"   MaxCharacterCount="9" MaxCharacterCountOverflowMode="LimitInput">
+                    </dxe:TextEdit>
+                    <Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />
+                </StackLayout>        
+                <StackLayout Padding="10,5,10,5">
+                    <Grid ColumnSpacing="0" RowSpacing="1" Margin="10,0,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblPallet" Text=""  Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/>
+                        <Label x:Name="lblLote" Text=""   Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                        <Label x:Name="lblCantidad" Text=""   Grid.Row="1" Grid.Column="0" FontAttributes="Bold"/>
+                        <Label x:Name="lblCantReservada" Text=""  Grid.Row="1" Grid.Column="1" FontAttributes="Bold"/>
+                        <Label x:Name="lblPosicion" Text=""   Grid.Row="2" Grid.Column="0" FontAttributes="Bold"/>
+                        <Label x:Name="lblEstado" Text=""  Grid.Row="2" Grid.Column="1" FontAttributes="Bold"/>
+                    </Grid>
+                    <Grid ColumnSpacing="0" RowSpacing="1" Margin="10,0,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblCodProd" Text=""  Grid.Row="0" Grid.Column="0" FontAttributes="Bold"/>
+                        <Label x:Name="lblProducto" Text=""    Grid.Row="1" Grid.Column="0" FontAttributes="Bold"/>
+                        <Label x:Name="lblBodega" Text=""  Grid.Row="2" Grid.Column="0" FontAttributes="Bold" />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Margin="0,10,0,0">
+                    <StackLayout>
+                        <dxg:DataGridView x:Name="GvData" >
+                            <dxg:DataGridView.ColumnHeaderStyle>
+                                <dxg:ColumnHeaderStyle BackgroundColor="#3399ff" 
+                                   FontSize="12" FontColor="White" FontAttributes="Bold"  />
+                            </dxg:DataGridView.ColumnHeaderStyle>
+                            <dxg:DataGridView.CellStyle>
+                                <dxg:CellStyle Padding="5" BackgroundColor="#333333" BorderColor="#515151"
+                           FontSize="14" FontColor="White" 
+                           SelectionColor="#f78a09" SelectionFontColor="Black" />
+                            </dxg:DataGridView.CellStyle>
+                        </dxg:DataGridView>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

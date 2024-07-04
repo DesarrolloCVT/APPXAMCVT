@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             mc:Ignorable="d"
+             x:Class="NewsXamarinCVT.Views.ActualizaTipoPallet">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Label Text="Cambia Tipo de Pallet" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Margin="25,0" Padding="10">
+                <dxe:TextEdit LabelText="N° Pallet" LabelFontSize="15"  BoxHeight="50" x:Name="txt_pallet" Completed="TxtNPallet_Completed" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"
+                                  Keyboard="Numeric"
+                                 >
+                </dxe:TextEdit>
+            </StackLayout>    
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Margin="25,0">
+                <dxe:ComboBoxEdit 
+                   ItemsSource="{Binding}"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="Tipo Pallet"
+                  IsLabelFloating="True"
+                  DisplayMember="Supportive_Description"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"            
+                  ValueMember="Supportive_Description"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True"  ReturnType="Next"
+                  x:Name="cboTipoPallet"
+                    SelectionChanged="CboTipoPallet_SelectedIndexChanged">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding Supportive_Description}" FontAttributes="Bold" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>               
+            </StackLayout>
+            <!--<StackLayout Padding="40,0,90,0">
+                <Picker x:Name="cboTipoPallet"
+                 Title="Tipo Pallet"             
+                 TitleColor="Red" IsVisible="False" SelectedIndexChanged="CboTipoPallet_SelectedIndexChanged">
+                    <Picker.Items>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>-->
+            <StackLayout Margin="20,20">
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="GENERAR" CornerRadius="20" FontAttributes="Bold" x:Name="btn_generar" HeightRequest="80" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="Green"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"                                     
+                                       Clicked="Btn_generar_Clicked" >
+                    </dxe:SimpleButton>
+                </StackLayout>
+            </StackLayout>
+            <!--<StackLayout Padding="10">
+                <Button Text="GENERAR" TextColor="White" x:Name="btn_generar" IsEnabled="False" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="300" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked=""/>
+            </StackLayout>-->
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

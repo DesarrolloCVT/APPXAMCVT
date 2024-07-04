@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors" xmlns:dxp="http://schemas.devexpress.com/xamarin/2014/forms/popup"
+             mc:Ignorable="d"
+             x:Class="NewsXamarinCVT.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <Label TextColor="#3399ff" FontAttributes="Bold" Text="versión 2.7.6.2023" FlexLayout.AlignSelf="End" FontSize="10" />
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,70,0,0">
+                    <Image Source="logocvt.png"  FlexLayout.AlignSelf="Center" BackgroundColor="Transparent" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center">
+                    <Label TextColor="#3399ff" FontAttributes="Bold" Text="Iniciar Sesión" FlexLayout.AlignSelf="Center" FontSize="25" />
+                </StackLayout>
+                <StackLayout Margin="25,0" Padding="10">
+                    <!--<Entry x:Name="txtUsuario" ReturnType="Next" Placeholder="Usuario" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  VerticalOptions="Start"  TextColor="Black" Completed="TxtUsuario_Completed"/>-->
+                    <dxe:TextEdit LabelText="USUARIO" LabelFontSize="15"  BoxHeight="50" x:Name="txtUsuario" Completed="txtUsuario_Completed_1" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"
+                                  EndIcon="user"
+                                 >
+                    </dxe:TextEdit>
+                </StackLayout>
+                <StackLayout Margin="25,0"  Padding="10">
+                    <dxe:PasswordEdit LabelText="CONTRASEÑA" LabelFontSize="15"  BoxHeight="50" x:Name="txtContraseña"
+                                      Completed="txtContraseña_Completed" IsLabelFloating="False" BorderColor="Green" 
+                                      LabelColor="Green" MaxCharacterCount="6" MaxCharacterCountOverflowMode="LimitInput"
+                                     ClearIconVisibility="Auto">
+                    </dxe:PasswordEdit>
+                    <!--<Entry x:Name="txtContraseña" ReturnType="Done" IsPassword="True" Placeholder="Contraseña" FontSize="Medium" FlexLayout.AlignSelf="Stretch"   TextColor="Black" />-->
+                </StackLayout>
+                <!--<StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="INICIAR CON HUELLA" CornerRadius="20" FontAttributes="Bold" x:Name="BtnIniHuella" HeightRequest="50"
+                                       Clicked="BtnIniHuella_Clicked"
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="#3399ff"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="enter" IconVisible="True"
+                                       >
+                    </dxe:SimpleButton>
+                </StackLayout>-->
+
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="INICIAR" CornerRadius="20" FontAttributes="Bold" x:Name="loging" HeightRequest="50"  Clicked="Loging_ClickedAsync" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="#3399ff"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="enter" IconVisible="True"
+                                       >
+                    </dxe:SimpleButton>
+                </StackLayout>
+                  <!--<AbsoluteLayout  HorizontalOptions="Center" VerticalOptions="Center">
+                        <ActivityIndicator x:Name="activity"  
+                       IsRunning="False"  
+                       IsEnabled="False"  
+                       IsVisible="False"  
+                       Color="Blue"  
+                       BackgroundColor="Transparent"                            
+                        />                       
+                    </AbsoluteLayout>-->                        
+            </StackLayout>              
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

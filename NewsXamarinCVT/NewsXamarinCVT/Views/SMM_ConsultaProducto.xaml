@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             mc:Ignorable="d"
+             x:Class="NewsXamarinCVT.Views.SMM_ConsultaProducto">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <StackLayout Padding="20">
+                    <Label Text="CONSULTA PRODUCTO" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black" IsTabStop="True"/>
+                </StackLayout>
+                <StackLayout Margin="25,0">
+                    <dxe:TextEdit LabelText="Codigo" LabelFontSize="15"  BoxHeight="50" x:Name="txt_pallet" Completed="Txt_pallet_Completed" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric">
+                    </dxe:TextEdit>
+                    <Label x:Name="lblError2" Text="" IsVisible="False" TextColor="Red" />
+                </StackLayout>
+                <!--<StackLayout Padding="55,0,60,0">
+                    <Entry Placeholder="Codigo" x:Name="txt_pallet" Completed="Txt_pallet_Completed"/>
+                   
+                </StackLayout>-->
+                <StackLayout Padding="10">
+                    <Label Text="" x:Name="lblProducto" HorizontalTextAlignment="Center"  TextColor="Black" IsTabStop="True"/>
+                </StackLayout>
+                <Grid ColumnSpacing="6" RowSpacing="6" Margin="10,0,10,0" x:Name="GvGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="" x:Name="lblPrecio" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                    <Label Text="" x:Name="lblUM" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="" x:Name="lblCantUM" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                    <Label Text="" x:Name="lblGrupArt" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="" x:Name="lblUnidades" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                </Grid>
+                <StackLayout Padding="10">
+                    <Label Text="" x:Name="lblEstado" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Button Text="LIMPIAR" TextColor="White" x:Name="btn_Limpiar" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="250" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked="Btn_Limpiar_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

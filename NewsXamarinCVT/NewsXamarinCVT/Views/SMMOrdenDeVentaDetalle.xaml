@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.SMMOrdenDeVentaDetalle"
+              NavigationPage.HasNavigationBar="False" > 
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <StackLayout Margin="25">
+                    <Label FontAttributes="Bold" Text="" VerticalOptions="Center" HorizontalOptions="Center" FontSize="25" IsTabStop="True"  x:Name="lblFolioOrden"/>                              
+                </StackLayout>
+            <StackLayout Margin="10,0,10,15">
+                <dxe:ComboBoxEdit 
+                   ItemsSource="{Binding}"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="PRODUCTO"
+                  IsLabelFloating="True"
+                  DisplayMember="NombrePro"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"            
+                  ValueMember="Codigo"
+                  TextFontSize="11"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True"  ReturnType="Next"
+                  x:Name="cboProducto"
+                    SelectionChanged="cboProducto_SelectionChanged">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding Codigo}" FontAttributes="Bold" />
+                                <Label Padding="10" Grid.Column="1" Text="{Binding NombrePro}" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+
+            <StackLayout Padding="0,0,0,10">
+                <Grid ColumnSpacing="1" RowSpacing="6" x:Name="GvGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <dxe:TextEdit LabelText="Cantidad" LabelFontSize="15"  BoxHeight="65" x:Name="txtCantidad" 
+                                 IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text=""
+                                 Margin="25,0"                             
+                                 ClearIconVisibility="Auto"
+                                 TextFontAttributes="Bold" Grid.Row="0" Grid.Column="0"
+                                 ReserveBottomTextLine="True"
+                                  Completed="txtCantidad_Completed">
+                    </dxe:TextEdit>
+                    <dxe:TextEdit LabelText="% Descuento" LabelFontSize="15"  BoxHeight="65" x:Name="txtPorcDesc" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                  Text=""
+                                  Margin="25,0"                             
+                                  ClearIconVisibility="Auto"
+                                  TextFontAttributes="Bold" Grid.Row="0" Grid.Column="1"
+                                  ReserveBottomTextLine="True"
+                                  Completed="txtPorcDesc_Completed">
+                    </dxe:TextEdit>
+                </Grid>
+            </StackLayout>
+            <StackLayout Margin="20,10,20,10">
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="Guardar Detalle" CornerRadius="20" FontAttributes="Bold" x:Name="btnGuardarDetalle" HeightRequest="80" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="DarkBlue"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="Guardar" IconVisible="True"
+                                     Clicked="btnGuardarDetalle_Clicked">
+                    </dxe:SimpleButton>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Margin="20,10,20,50">
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="Ver Registro Orden" CornerRadius="20" FontAttributes="Bold" x:Name="btnVerRegistro" HeightRequest="80" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="CadetBlue"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="Buscar" IconVisible="True"
+                                     Clicked="btnVerRegistro_Clicked">
+                    </dxe:SimpleButton>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Margin="20,10,20,50">
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="Salir" CornerRadius="20" FontAttributes="Bold" x:Name="btnSalir" HeightRequest="80" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="Red"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="off" IconVisible="True"
+                                    Clicked="btnSalir_Clicked" >
+                    </dxe:SimpleButton>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>  
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             mc:Ignorable="d"
+             x:Class="NewsXamarinCVT.ConsultaUbicacion"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="25">
+                <Label Text="Consulta Ubicacion" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Margin="25,0" Padding="10">
+                <!--<Entry x:Name="txtUsuario" ReturnType="Next" Placeholder="Usuario" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  VerticalOptions="Start"  TextColor="Black" Completed="TxtUsuario_Completed"/>-->
+                <dxe:TextEdit LabelText="UBICACION" LabelFontSize="15"  BoxHeight="50" x:Name="txtPosicion" Completed="TxtPosicion_Completed" 
+                                    IsLabelFloating="False" BorderColor="Green" LabelColor="Green">
+                </dxe:TextEdit>
+            </StackLayout>
+            <!--<StackLayout Padding="20,10,20,10">
+                <Label Text="Ingrese Posicion" 
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Large" TextColor="Red"/>
+                <Entry Placeholder="Posicion" x:Name="txtPosicion" Keyboard="Numeric" Completed="TxtPosicion_Completed" ReturnType="Send"  MaxLength="9"/>
+               
+            </StackLayout>-->
+            <StackLayout HorizontalOptions="CenterAndExpand">                
+                <Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <!--<StackLayout>
+                <Button Text="Buscar" x:Name="btnBuscar" Clicked="BtnBuscar_Clicked" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="300" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="White"/>
+            </StackLayout>-->
+            <!--<StackLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="vCArga">
+                <AbsoluteLayout>
+                    <ActivityIndicator x:Name="activity"  
+                       IsRunning="False"  
+                       IsEnabled="False"  
+                       IsVisible="False"  
+                       Color="Blue"  
+                       BackgroundColor="Transparent"                      
+                     />
+                </AbsoluteLayout>
+            </StackLayout>-->    
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

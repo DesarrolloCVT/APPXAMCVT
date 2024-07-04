@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.GeoLoc">
+    
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <StackLayout Margin="25">
+                <Label FontAttributes="Bold" Text="Busqueda de coordenadas en su localizacion, recuerde mantener su GPS encendido" VerticalOptions="Center" HorizontalOptions="Center" FontSize="25"/>
+            </StackLayout>
+            <StackLayout Margin="20,0">
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="Buscar" CornerRadius="20" FontAttributes="Bold" x:Name="loging" HeightRequest="50"  Clicked="btn_clicked" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="DarkBlue"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="" IconVisible="True"
+                                       >
+                    </dxe:SimpleButton>
+                </StackLayout>
+            </StackLayout>      
+            <StackLayout Margin="10">
+                <dxe:TextEdit LabelText="Longitud" LabelFontSize="15"  BoxHeight="50" x:Name="lblLong" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text=""
+                                 Margin="25,0"
+                               IsEnabled="False"
+                              ClearIconVisibility="Never"
+                               TextFontAttributes="Bold">
+                </dxe:TextEdit>
+            </StackLayout>
+            <StackLayout Margin="10">
+                <dxe:TextEdit LabelText="Latitud" LabelFontSize="15"  BoxHeight="50" x:Name="lblLat" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text=""
+                                 Margin="25,0"
+                               IsEnabled="False"
+                              ClearIconVisibility="Never"
+                               TextFontAttributes="Bold">
+                </dxe:TextEdit>
+            </StackLayout>
+            <StackLayout Margin="10">
+                <dxe:TextEdit LabelText="Altitud" LabelFontSize="15"  BoxHeight="50" x:Name="lblAlt" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text=""
+                                 Margin="25,0"
+                               IsEnabled="False"
+                              ClearIconVisibility="Never"
+                               TextFontAttributes="Bold">
+                </dxe:TextEdit>
+            </StackLayout>
+            <StackLayout Margin="40,0">
+                <dxe:SimpleButton  Text="Ver mapa" CornerRadius="20" FontAttributes="Bold" x:Name="Mapa" HeightRequest="70"  Clicked="Mapa_Clicked" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="Green"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="" IconVisible="True"
+                                       >
+                </dxe:SimpleButton>
+            </StackLayout>
+
+            <!--<Label FontAttributes="Bold" x:Name="lblLong" Text="Longitude :" VerticalOptions="Center" HorizontalOptions="Center"/>-->
+            <!--<Label FontAttributes="Bold" x:Name="lblLat" Text="Latitude :" VerticalOptions="Center" HorizontalOptions="Center"/>-->
+            <!--<Label FontAttributes="Bold" x:Name="lblAlt" Text="Altitude :" VerticalOptions="Center" HorizontalOptions="Center"/>-->
+        </StackLayout>
+        
+    </ScrollView>
+</ContentPage>

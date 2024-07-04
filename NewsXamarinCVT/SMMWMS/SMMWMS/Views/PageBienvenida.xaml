@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SMMWMS.Views.PageBienvenida">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout >
+                <StackLayout Margin="0,20,0,25">
+                    <Label Text="Bienvenido!" HorizontalTextAlignment="Center" FontSize="Large"/>
+                    <Label HorizontalTextAlignment="Center" FontSize="Large" x:Name="lblNombre" FontAttributes="Bold"></Label>
+                </StackLayout>
+                <!--<Grid ColumnSpacing="6" RowSpacing="6" Margin="10,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Cons. Ubicacion" ContentLayout="Top,0" Image="consultaposicion.png" BackgroundColor="Orange" CornerRadius="30" x:Name="bntConsultaUbicacion" FontAttributes="Bold" Clicked="BntConsultaUbicacion_Clicked"  Grid.Row="0" Grid.Column="0"/>
+                    <Button Text="Posicionamiento"  ContentLayout="Top,0" Image="posicionamientio.png" BackgroundColor="#1561E8" CornerRadius="30" x:Name="btnPosicionamiento" FontAttributes="Bold" Clicked="BtnPosicionamiento_Clicked" Grid.Row="0" Grid.Column="1"/>
+                    <Button Text="Repaletizado" ContentLayout="Top,0" Image="repalletizado.png" BackgroundColor="#4DCA0B" CornerRadius="30" x:Name="btnRepaletizado" FontAttributes="Bold" Clicked="BtnRepaletizado_Clicked" Grid.Row="1" Grid.Column="0"/>
+                    <Button Text="Traza. Pallet"  ContentLayout="Top,0" Image="tomainventario.png" BackgroundColor="#2CB4FD" CornerRadius="30" x:Name="bntTomaInventario" FontAttributes="Bold" Clicked="BntTomaInventario_Clicked" Grid.Row="1" Grid.Column="1"/>
+                </Grid>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

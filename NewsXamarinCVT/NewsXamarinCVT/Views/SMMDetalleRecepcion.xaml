@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             mc:Ignorable="d"
+             x:Class="NewsXamarinCVT.Views.SMMDetalleRecepcion">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <StackLayout Padding="5">
+                    <Label Text="Recepcion Folio" HorizontalTextAlignment="Center" FontSize="Small" TextColor="Black" IsTabStop="True" />
+                    <Label Text="" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" IsTabStop="True" x:Name="lblFolioRecepcion"/>
+                </StackLayout>
+                <!--<StackLayout Padding="30,0,30,0">
+                    <Entry Placeholder="Codigo" x:Name="txt_CodProducto" Completed="Txt_CodProducto_Completed"/>
+                    --><!--<Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />--><!--
+                </StackLayout>-->
+                <StackLayout Margin="25,0">
+                    <dxe:TextEdit LabelText="Codigo" LabelFontSize="15"  BoxHeight="50" x:Name="txt_CodProducto" Completed="Txt_CodProducto_Completed" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 ClearIconVisibility="Never">
+                    </dxe:TextEdit>
+                    <Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />
+                </StackLayout>
+                <StackLayout x:Name="lblDatosProd" IsVisible="False">
+                    <Label Text="" x:Name="lblDescripion" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold"/>
+                    <Grid ColumnSpacing="6" RowSpacing="6" Margin="10,10,10,10" x:Name="GvGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="" x:Name="lblCodProducto" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>                       
+                        <Label Text="" x:Name="lblCosto" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="" x:Name="lblCantSolicitada" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
+                        <Label Text="" x:Name="lblSku" HorizontalTextAlignment="Center"  TextColor="Black"  FontAttributes="Bold" Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
+                <!--<StackLayout Margin="10,0,10,0" x:Name="lblIngresos" IsVisible="False">
+                    <Grid ColumnSpacing="6" RowSpacing="6" Margin="5,0,5,0" x:Name="GvGrid2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="F.Elaboracion" HorizontalTextAlignment="Start"  TextColor="Black" Grid.Row="0" Grid.Column="0" />
+                        <DatePicker x:Name="Felab"  Format="dd/MM/yyyy" Grid.Row="0" Grid.Column="0" Margin="0,10,10,0" DateSelected="Felab_DateSelected"></DatePicker>
+              
+                        
+                        <Label Text="F.Vencimiento" HorizontalTextAlignment="Start"  TextColor="Black" Grid.Row="0" Grid.Column="1" />
+                        <DatePicker x:Name="Fvencimiento"  Format="dd/MM/yyyy" Grid.Row="0" Grid.Column="1" Margin="0,10,10,0" DateSelected="Fvencimiento_DateSelected"></DatePicker>
+
+                        <Entry Placeholder="Cantidad" x:Name="txt_cantidad" Keyboard="Numeric" Grid.Row="1" Grid.Column="0" />
+                        --><!--<Entry Placeholder="Lote" x:Name="txtLote" Grid.Row="1" Grid.Column="1"/>--><!--
+                    </Grid>
+                </StackLayout>-->
+                <StackLayout Margin="10,0,10,0" x:Name="lblIngresos" IsVisible="False">
+                    <Grid ColumnSpacing="2" RowSpacing="6" Margin="5,0,5,0" x:Name="GvDatoElab">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <dxe:TextEdit LabelText="Dia Elab." LabelFontSize="15"  BoxHeight="50" x:Name="txtDiaElab" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric"
+                                      Grid.Row="0" Grid.Column="0"
+                                    Completed="txtDiaElab_Completed">
+                        </dxe:TextEdit>
+                        <dxe:TextEdit LabelText="Mes Elab." LabelFontSize="15"  BoxHeight="50" x:Name="txtMesElab" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric"
+                                         Grid.Row="0" Grid.Column="1"
+                                     Completed="txtMesElab_Completed">
+                        </dxe:TextEdit>
+                        <dxe:TextEdit LabelText="año Elab." LabelFontSize="15"  BoxHeight="50" x:Name="txtAnoElab" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric"
+                                         Grid.Row="0" Grid.Column="2"
+                                   Completed="txtAnoElab_Completed" >
+                        </dxe:TextEdit>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Margin="10,0,10,0" x:Name="lblIngresos2" IsVisible="False">
+                    <Grid ColumnSpacing="2" RowSpacing="6" Margin="5,0,5,0" x:Name="GvDatosVenc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <dxe:TextEdit LabelText="Dia Venc." LabelFontSize="15"  BoxHeight="50" x:Name="txtDiaVenc" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric"
+                                      Grid.Row="0" Grid.Column="0"
+                                    Completed="txtDiaVenc_Completed">
+                        </dxe:TextEdit>
+                        <dxe:TextEdit LabelText="Mes Venc." LabelFontSize="15"  BoxHeight="50" x:Name="txtMesVenc" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric"
+                                         Grid.Row="0" Grid.Column="1"
+                                     Completed="txtMesVenc_Completed">
+                        </dxe:TextEdit>
+                        <dxe:TextEdit LabelText="año Venc." LabelFontSize="15"  BoxHeight="50" x:Name="txtAnoVenc" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric"
+                                         Grid.Row="0" Grid.Column="2"
+                                   Completed="txtAnoVenc_Completed" >
+                        </dxe:TextEdit>
+                    </Grid>
+                    <dxe:TextEdit LabelText="Cantidad" LabelFontSize="15"  BoxHeight="50" x:Name="txt_cantidad" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                               
+                                 Keyboard="Numeric">
+                    </dxe:TextEdit>
+                </StackLayout>
+                <!--<StackLayout Margin="25,0">
+                 
+                    --><!--<Label x:Name="lblError3" Text="" IsVisible="False" TextColor="Red" />--><!--
+                </StackLayout>-->
+                <StackLayout Padding="10">
+                    <Button Text="GUARDAR" TextColor="White" x:Name="btn_Guardar" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="250" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" IsVisible="False" Clicked="Btn_Guardar_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

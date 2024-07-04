@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SMMWMS.MainPage">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" Background="White">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <StackLayout Padding="35"></StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Padding="0,0,0,20">
+                    <Image Source="logosmm.jpg"  FlexLayout.AlignSelf="Center" BackgroundColor="White" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center">
+                    <Label TextColor="#3399ff" FontAttributes="Bold" Text="Iniciar Sesión" FlexLayout.AlignSelf="Center" FontSize="25" />
+                </StackLayout>
+                <StackLayout Margin="25,0" Padding="10">
+                    <Entry x:Name="txtUsuario" ReturnType="Next" Placeholder="Usuario" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  VerticalOptions="Start"  TextColor="Black" Completed="TxtUsuario_Completed"/>
+                </StackLayout>
+                <StackLayout Margin="25,0"  Padding="10">
+                    <Entry x:Name="txtContraseña" ReturnType="Done" IsPassword="True" Placeholder="Contraseña" FontSize="Medium" FlexLayout.AlignSelf="Stretch"   TextColor="Black" />
+                </StackLayout>
+                <Button x:Name="loging"  FontSize="Medium" TextColor="White" BorderColor="Black" BackgroundColor="Orange"  CornerRadius="50" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Text="Iniciar sesión" Clicked="Loging_ClickedAsync" WidthRequest="250" Padding="10" ></Button>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <AbsoluteLayout>
+                        <ActivityIndicator x:Name="activity"  
+                       IsRunning="False"  
+                       IsEnabled="False"  
+                       IsVisible="False"  
+                       Color="Blue"  
+                       BackgroundColor="Transparent"                            
+                        />
+                    </AbsoluteLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

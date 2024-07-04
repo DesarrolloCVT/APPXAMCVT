@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:dxg="http://schemas.devexpress.com/xamarin/2014/forms/datagrid" xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.SMM_TransferenciaBultosCargados"> 
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+            <StackLayout Margin="10">
+                <Grid ColumnSpacing="6" RowSpacing="6" x:Name="GvGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <dxe:TextEdit LabelText="N° Pallet" LabelFontSize="15"  BoxHeight="50" x:Name="lblBodega" 
+                                    IsLabelFloating="False" BorderColor="Green" LabelColor="Green" Grid.Row="0" Grid.Column="0"  
+                               ClearIconVisibility="Never">
+                    </dxe:TextEdit>
+
+                    <dxe:SimpleButton  Text="Quitar" CornerRadius="20" FontAttributes="Bold" x:Name="btnQuitar" HeightRequest="50" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="Red"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="close" IconVisible="True"
+                                    Clicked="btnQuitar_Clicked" 
+                                               Grid.Row="0" Grid.Column="1">
+                    </dxe:SimpleButton>
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+                <dxg:DataGridView x:Name="GvData">
+                    <dxg:DataGridView.ColumnHeaderStyle>
+                        <dxg:ColumnHeaderStyle BackgroundColor="#3399ff" 
+                                   FontSize="12" FontColor="White" FontAttributes="Bold" />
+                    </dxg:DataGridView.ColumnHeaderStyle>
+                    <dxg:DataGridView.CellStyle>
+                        <dxg:CellStyle Padding="5" BackgroundColor="#333333" BorderColor="#515151"
+                           FontSize="14" FontColor="White" 
+                           SelectionColor="#f78a09" SelectionFontColor="Black"/>
+                    </dxg:DataGridView.CellStyle>
+                </dxg:DataGridView>
+            </StackLayout>
+        </StackLayout>           
+        </ScrollView>   
+</ContentPage>

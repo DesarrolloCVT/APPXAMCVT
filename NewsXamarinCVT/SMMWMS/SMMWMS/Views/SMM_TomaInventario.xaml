@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SMMWMS.Views.SMM_TomaInventario">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <StackLayout Padding="20">
+                    <Label Text="TOMA INVENTARIO MAYORISTA" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black" IsTabStop="True"/>
+                </StackLayout>
+                <StackLayout Padding="55,0,60,0">
+                    <Picker x:Name="cboFolio"
+                 Title="FOLIO"             
+                 TitleColor="Red" SelectedIndexChanged="CboFolio_SelectedIndexChanged">
+                        <Picker.Items>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Padding="55,0,60,0">
+                    <Entry Placeholder="Bodega" x:Name="txt_Bodega" Completed="Txt_Bodega_Completed"/>
+                    <Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />
+                </StackLayout>
+                <StackLayout Padding="55,0,60,0" >
+                    <Picker x:Name="cboPasillo"
+                 Title="PASILLO"             
+                 TitleColor="Red" SelectedIndexChanged="CboPasillo_SelectedIndexChanged" >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Pasillo 1</x:String>
+                                <x:String>Pasillo 2</x:String>
+                                <x:String>Pasillo 3</x:String>
+                                <x:String>Pasillo 4</x:String>
+                                <x:String>Pasillo 5</x:String>
+                                <x:String>Pasillo 6</x:String>
+                                <x:String>Pasillo 7</x:String>
+                                <x:String>Pasillo 8</x:String>
+                                <x:String>Pasillo 9</x:String>
+                                <x:String>Refrigerado</x:String>
+                                <x:String>Congelado</x:String>
+                                <x:String>Agricola</x:String>
+                                <x:String>Pasillo 21</x:String>
+                                <x:String>Pasillo 22</x:String>
+                                <x:String>Pasillo 23</x:String>
+                                <x:String>Pasillo 24</x:String>
+                                <x:String>Pasillo 25</x:String>
+                                <x:String>Picking</x:String>
+                                <x:String>Merma</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Padding="55,0,60,0">
+                    <Entry Placeholder="Codigo" x:Name="txt_pallet" Completed="Txt_pallet_Completed"/>
+                    <Label x:Name="lblError2" Text="" IsVisible="False" TextColor="Red" />
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Label Text="" x:Name="lblProducto" HorizontalTextAlignment="Center"  TextColor="Black" IsTabStop="True"/>
+                </StackLayout>
+                <StackLayout Padding="55,0,60,0">
+                    <Entry Placeholder="Cantidad" x:Name="txt_cantidad" Keyboard="Numeric" Completed="Txt_cantidad_Completed"/>
+                    <Label x:Name="lblError3" Text="" IsVisible="False" TextColor="Red" />
+                </StackLayout>
+                <StackLayout Padding="10">
+                    <Button Text="AGREGAR" TextColor="White" x:Name="btn_agregar" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="250" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked="Btn_agregar_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

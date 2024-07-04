@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.Repaletizado">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Label Text="REPALETIZADO" HorizontalTextAlignment="Center" FontSize="Large" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Margin="25,0" >
+                <!--<Entry x:Name="txtUsuario" ReturnType="Next" Placeholder="Usuario" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  VerticalOptions="Start"  TextColor="Black" Completed="TxtUsuario_Completed"/>-->
+                <dxe:TextEdit LabelText="N° Pallet" LabelFontSize="15"  BoxHeight="50" x:Name="txtPosicion" Completed="TxtPosicion_Completed" 
+                              IsLabelFloating="False" BorderColor="Green" LabelColor="Green" Keyboard="Numeric">
+                </dxe:TextEdit>
+            </StackLayout>
+            <!--<StackLayout Padding="40,0,90,0">
+                <Entry Placeholder="N° Pallet" x:Name="txtPosicion" Completed="TxtPosicion_Completed" Keyboard="Numeric"/>
+            </StackLayout>-->          
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label x:Name="lblError" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Padding="40,0,20,0" x:Name="LayoutOrigen">
+                <Label Text="" 
+                   x:Name="lbl_codproducto"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lbl_producto"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lbl_lote"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lbl_cantidad"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lblBodega"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+            </StackLayout>
+            <StackLayout Margin="25,0" >
+                <dxe:ComboBoxEdit x:Name="picker"
+                   LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="TIPO REPALETIZADO"
+                  IsLabelFloating="True"             
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"          
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True"  ReturnType="Next"               
+                    SelectionChanged="Picker_SelectedIndexChanged">
+                    <dxe:ComboBoxEdit.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>NUEVO</x:String>
+                            <x:String>EXISTENTE</x:String>                          
+                        </x:Array>
+                    </dxe:ComboBoxEdit.ItemsSource>
+                </dxe:ComboBoxEdit>                
+                <!--<Picker x:Name="picker"
+                 Title="TIPO REPALETIZADO"             
+                 TitleColor="Red" SelectedIndexChanged="Picker_SelectedIndexChanged" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>NUEVO</x:String>
+                            <x:String>EXISTENTE</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>-->
+            </StackLayout>
+            <StackLayout Margin="25,0">
+                <dxe:ComboBoxEdit 
+                   ItemsSource="{Binding}"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="Tipo Pallet"
+                  IsLabelFloating="True"
+                  DisplayMember="Supportive_Description"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"            
+                  ValueMember="Supportive_Description"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True"  ReturnType="Next"
+                  x:Name="cboTipoPallet"
+                    SelectionChanged="CboTipoPallet_SelectedIndexChanged">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding Supportive_Description}" FontAttributes="Bold" />                                
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+                <!--<Picker x:Name="cboTipoPallet"
+                 Title="Tipo Pallet"             
+                 TitleColor="Red" IsVisible="False" SelectedIndexChanged="CboTipoPallet_SelectedIndexChanged">
+                    <Picker.Items>
+                    </Picker.Items>
+                </Picker>-->
+            </StackLayout>
+            <StackLayout Margin="25,0" >
+                <!--<Entry x:Name="txtUsuario" ReturnType="Next" Placeholder="Usuario" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  VerticalOptions="Start"  TextColor="Black" Completed="TxtUsuario_Completed"/>-->
+                <dxe:TextEdit LabelText="Destino" LabelFontSize="15"  BoxHeight="50" x:Name="txt_destino" Completed="Txt_destino_Completed" 
+                              IsLabelFloating="False" BorderColor="Green" LabelColor="Green" Keyboard="Numeric" IsVisible="False">
+                </dxe:TextEdit>
+            </StackLayout>
+            <!--<StackLayout Padding="40,0,90,0">
+                <Entry Placeholder="Destino" x:Name="txt_destino" IsVisible="False" Completed="Txt_destino_Completed" Keyboard="Numeric"/>
+            </StackLayout>-->
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label x:Name="lblError2" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Padding="40,0,20,0" x:Name="LayoutDestinoExistente">
+                <Label Text="" 
+                   x:Name="lbl_dcodproducto"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lbl_dproducto"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lbl_dlote"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lbl_dcantidad"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+                <Label Text="" 
+                   x:Name="lbl_dBodega"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Start" 
+                  FontSize="Small" TextColor="Red"/>
+            </StackLayout>
+            <StackLayout Margin="25,0" >
+                <!--<Entry x:Name="txtUsuario" ReturnType="Next" Placeholder="Usuario" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  VerticalOptions="Start"  TextColor="Black" Completed="TxtUsuario_Completed"/>-->
+                <dxe:TextEdit LabelText="Cantidad a Repaletizar" LabelFontSize="15"  BoxHeight="50" x:Name="txt_cantidad" Completed="Txt_cantidad_Completed" 
+                              IsLabelFloating="False" BorderColor="Green" LabelColor="Green" Keyboard="Numeric">
+                </dxe:TextEdit>
+            </StackLayout>
+            <!--<StackLayout Padding="40,0,90,0">
+                <Entry Placeholder="Cantidad a Repaletizar" x:Name="txt_cantidad" Keyboard="Numeric" Completed="Txt_cantidad_Completed"/>
+            </StackLayout>-->
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label x:Name="lblError3" Text="" IsVisible="False" TextColor="Red" />
+            </StackLayout>
+            <StackLayout Padding="10
+                         ">
+                <Button Text="GENERAR" TextColor="White" x:Name="btn_generar" BackgroundColor="#00b33c"  CornerRadius="5" WidthRequest="300" Padding="10" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Clicked="Btn_generar_Clicked"   />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

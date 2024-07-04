@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.SMMOdenDeVentaCabecera">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout Padding="0,0,0,10">
+            <StackLayout Margin="25">
+                <Label FontAttributes="Bold" Text="ORDEN DE VENTAS" VerticalOptions="Center" HorizontalOptions="Center" FontSize="25"/>
+            </StackLayout>
+            <StackLayout Margin="10,0,10,15">
+                <dxe:ComboBoxEdit ItemsSource="{Binding}"
+                  TextFontAttributes="Bold"   
+                  LabelColor="Green"                
+                  BorderColor="Green"             
+                  LabelText="RUT CLIENTE"
+                  IsLabelFloating="True"
+                  DisplayMember="NombreCliente"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"
+                  SelectionChanged="ComboBoxEdit_SelectionChanged"
+                  x:Name="cboCliente"
+                  ValueMember="RutCliente"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  ReserveBottomTextLine="True" >
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding RutCliente}" FontAttributes="Bold" />
+                                <Label Padding="10" Grid.Column="1" Text="{Binding NombreCliente}" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+
+            <StackLayout Margin="10,0,10,15">
+                <dxe:ComboBoxEdit 
+                  TextFontAttributes="Bold"   
+                  LabelColor="Green"                
+                  BorderColor="Green"           
+                  LabelText="DIRECCION DESPACHO"
+                  IsLabelFloating="True"
+                  DisplayMember="Direccion"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"                
+                  x:Name="cboDirDespacho"
+                  ValueMember="Direccion"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  SelectionChanged="cboDirDespacho_SelectionChanged"
+                  ReserveBottomTextLine="True" >
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding Direccion}" FontAttributes="Bold" />
+
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+
+            <StackLayout Margin="10,0,10,15">
+                <dxe:ComboBoxEdit 
+                  TextFontAttributes="Bold"   
+                  LabelColor="Green"                    
+                  BorderColor="Green"
+                  LabelText="DIRECCION FACTURACION"
+                  IsLabelFloating="True"
+                  DisplayMember="DireccionFac"
+                  IsFilterEnabled="True"
+                  FilterMode="Contains"
+                  FilterComparisonType="CurrentCultureIgnoreCase"
+                  DropDownSelectedItemBackgroundColor="GreenYellow"                
+                  x:Name="cboDirFact"
+                  ValueMember="DireccionFac"
+                  TextFontSize="15"
+                  ClearIconVisibility="Auto"
+                  SelectionChanged="cboDirFact_SelectionChanged"
+                  ReserveBottomTextLine="True" >
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Padding="10" Text="{Binding DireccionFac}" FontAttributes="Bold" />
+
+                            </Grid>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+            </StackLayout>
+
+            <StackLayout Margin="10,0,10,15">
+                <dxe:DateEdit DisplayFormat="dd-MM-yyyy"
+                              LabelText="FECHA ENTREGA"
+                              IsLabelFloating="False" BorderColor="Green" LabelColor="Green"
+                              ClearIconVisibility="Auto"
+                              DateChanged="DateEdit_DateChanged"
+                              x:Name="dteFechEntrega"
+                              TextFontAttributes="Bold"
+                              ReserveBottomTextLine="True" 
+                              ReturnType="Next"/>
+            </StackLayout>
+            <StackLayout Margin="20,20,0,25">
+                <StackLayout Margin="25,0">
+                    <dxe:SimpleButton  Text="Guardar y Crear" CornerRadius="20" FontAttributes="Bold" x:Name="btnCrearOrden" HeightRequest="80" 
+                                      PressedBackgroundColor="MediumSeaGreen"
+                                       BackgroundColor="DarkBlue"
+                                       BorderColor="Black"
+                                       BorderThickness="2"
+                                       PressedBorderColor="DarkOrange"
+                                       Icon="Guardar" IconVisible="True"
+                                      Clicked="btnCrearOrden_Clicked">
+                    </dxe:SimpleButton>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    <!--FocusedBorderColor="MediumSeaGreen"
+                  FocusedLabelColor="MediumSeaGreen"-->
+</ContentPage>

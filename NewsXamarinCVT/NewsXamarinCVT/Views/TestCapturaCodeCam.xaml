@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NewsXamarinCVT"
+             xmlns:viewmodels="clr-namespace:NewsXamarinCVT.ViewModel;assembly=NewsXamarinCVT"
+             xmlns:dxe="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="NewsXamarinCVT.Views.TestCapturaCodeCam">
+    <ContentPage.BindingContext>
+        <viewmodels:TestCapturaViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <Button Command="{Binding ButtonCommand}" CornerRadius="20" BackgroundColor="Teal" TextColor="White" FontSize="Medium" Text="Click scanner" Margin="35" HeightRequest="60"/>
+            <!--<Label Text="{Binding Result}" HorizontalOptions="Center" VerticalOptions="StartAndExpand" />-->
+            <dxe:TextEdit LabelText="CODIGO DE BARRAS" LabelFontSize="15"  BoxHeight="50" x:Name="txtCodigo" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text="{Binding Result}"
+                                 Margin="25,0">
+            </dxe:TextEdit>
+            <StackLayout Margin="50,0">
+                <Button CornerRadius="20" BackgroundColor="DarkBlue" TextColor="White" FontSize="Medium" Text="Buscar" Margin="35" HeightRequest="60" Clicked="Button_Clicked"/>
+            </StackLayout>
+            <StackLayout>
+                <dxe:TextEdit LabelText="Codigo Producto" LabelFontSize="15"  BoxHeight="50" x:Name="lblCodPro" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text=""
+                                 Margin="25,0"
+                               IsEnabled="False"
+                              ClearIconVisibility="Never"
+                               TextFontAttributes="Bold">
+                </dxe:TextEdit>
+            </StackLayout>
+            <StackLayout>
+                <dxe:MultilineEdit LabelText="Producto" LabelFontSize="15"  BoxHeight="70" x:Name="lblProducto" 
+                                  IsLabelFloating="False" BorderColor="Green" LabelColor="Green"                                 
+                                 Text=""
+                                 Margin="25,0"
+                               IsEnabled="False"
+                               ClearIconVisibility="Never"
+                                TextFontAttributes="Bold">
+                </dxe:MultilineEdit>              
+            </StackLayout>            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

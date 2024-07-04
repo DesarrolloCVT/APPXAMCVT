@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SMMWMS.Views.PageMain">
+    <MasterDetailPage.Master>
+        <ContentPage Title="masterPage">
+            <Grid BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid>                  
+                    <StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                        <Image Source="logosmm.jpg"></Image>
+                        <Label Text="" TextColor="Black" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" x:Name="lblNombre"/>
+                    </StackLayout>
+                </Grid>
+                <StackLayout Margin="0,0,0,0" Grid.Row="1" Spacing="0">
+                    <ListView x:Name="listPageMain" ItemSelected="OnListItemSelected" BackgroundColor="White" SeparatorColor="Gray">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell TextColor="#3399ff" DetailColor="#AED6FF"
+                                            Text="{Binding title}"
+                                            Detail="{Binding detail}">
+                                </ImageCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="White">
+                        <Image Source="submarcas.png" BackgroundColor="White"></Image>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
